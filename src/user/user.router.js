@@ -100,7 +100,7 @@ else{
 
 
 //Get
-app.get("/:id",async(req,res)=>{
+app.get("/getprofile/:id",async(req,res)=>{
 const token=req.headers["authorization"]
 if(token){
     const decoded=jwt.decode(token)

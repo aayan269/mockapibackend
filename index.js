@@ -3,6 +3,7 @@ const PORT=process.env.PORT
 const express=require("express")
 const connect=require("./config/db")
 const userRoute=require("./src/user/user.router")
+const investmentRoute=require("./src/investment/investment.router")
 const cors=require("cors")
 
 const app=express()
@@ -14,7 +15,7 @@ app.use(cors())
 
 
 app.use("/users",userRoute)
-
+app.use("/invest",investmentRoute)
 app.listen(PORT,async()=>{
     await connect()
     console.log("server is running")
